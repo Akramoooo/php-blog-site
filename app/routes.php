@@ -4,6 +4,7 @@ require "../vendor/autoload.php";
 
 use League\Plates\Engine;
 use DI\ContainerBuilder;
+use FastRoute\RouteCollector;
 
 
 $ContainerBuilder = new ContainerBuilder;
@@ -17,6 +18,9 @@ $container = $ContainerBuilder->build();
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/home', ['App\Controllers\HomeController', 'index']);
+    $r->addGroup('/blog', function (RouteCollector $r) {
+        $r->addRoute('GET', '/index', ['App\Controllers\BlogController', 'index']);
+    });
     // {id} must be a number (\d+)
     // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
     // // The /{title} suffix is optional

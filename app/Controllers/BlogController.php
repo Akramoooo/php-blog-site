@@ -5,7 +5,7 @@ use App\Services\DataBase;
 use League\Plates\Engine;
 
 
-class HomeController{
+class BlogController{
 
     protected $view;
     protected $database;
@@ -17,6 +17,8 @@ class HomeController{
     }
 
     public function index(){
-        echo $this->view->render('Home/index');
+        $posts = $this->database->getAll('posts');
+        echo $this->view->render('Blog/index', ['posts' => $posts]);
+
     }
 }
