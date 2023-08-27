@@ -1,0 +1,99 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-home-container{
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.home-info-container{
+    display: inline-block;
+    margin:10px;
+    margin-inline: 0;
+}
+
+.home-info-container>span{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.my-github{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.my-telegram{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.my-github>img , .my-telegram>img{
+    width: 100%;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    height: 300px;
+}
+
+.my-github p, .my-telegram>p{
+    margin: 6px;
+    margin-inline: 0;
+    font-weight: 600;
+}
+
+.shares{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+@media(max-width:520px){
+    .main-home-container{
+        margin: 0;
+        width: 100%;
+    }
+
+    .shares{
+        flex-direction: column;
+    }
+
+    .my-github , .my-telegram{
+        margin: 0;
+        width: 100%;
+        margin: 20px;
+        margin-inline: 0;
+        height: 500px;
+    }
+}
+
+@media(max-width:970px){
+    .main-home-container{
+        margin: 0;
+        width: 100%;
+    }
+
+    .shares{
+        flex-direction: column;
+        align-items: center;
+    }
+    .my-github , .my-telegram{
+        margin: 0;
+        margin: 20px;
+        margin-inline: 0;
+        height: 500px;
+    }
+}
+
