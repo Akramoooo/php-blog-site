@@ -31,5 +31,16 @@ $(document).ready(function(){
         $(this).remove('<span>Akramoooo</span>')
     });
 
-    ///////////////////////////////////
+    ///////////////////////работа с кнопкой Добавления Блога///
+
+    $('.add-blog-container>button').on('click', function(){
+        $('#myForm').fadeIn(400).css({'display':'block'})
+    });
+
+    $('.leave-btn>p').on('click', function(){
+        $('#myForm').fadeOut(400)
+    });
+
+
+    ///////////////////////////////
   });
