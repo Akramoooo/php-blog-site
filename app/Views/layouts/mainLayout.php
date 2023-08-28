@@ -19,7 +19,7 @@
         <div class="drop-menu">
           <ul>
             <li><a href="<?='/home'?>">Home</a></li>
-            <li><a href="<?='/blogs/index'?>">Blogs</a></li>
+            <li><a href="<?='/blog/index'?>">Blogs</a></li>
             <li><a href="#">Sign in</a></li>
             <li><a href="#">Log in</a></li>
           </ul>

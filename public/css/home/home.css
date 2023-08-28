@@ -85,15 +85,19 @@
         width: 100%;
     }
 
-    .shares{
-        flex-direction: column;
-        align-items: center;
-    }
+
     .my-github , .my-telegram{
         margin: 0;
         margin: 20px;
         margin-inline: 0;
         height: 500px;
+    }
+}
+
+@media(max-width:800px){
+    .shares{
+        flex-direction: column;
+        align-items: center;
     }
 }
 
