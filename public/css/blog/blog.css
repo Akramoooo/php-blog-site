@@ -5,6 +5,8 @@
 
 .blog-main-container>h1{
     text-align: center;
+    width: 100px;
+    margin-left: 45%;
 }
 
 .blog-card{
