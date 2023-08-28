@@ -1,79 +1,218 @@
-.blog-main-container{
+.blog-main-container {
     width: 80%;
     margin-left: 10%;
 }
 
-.blog-main-container>h1{
+.blog-main-container>h1 {
     text-align: center;
     width: 100px;
     margin-left: 45%;
 }
 
-.blog-card{
+.blog-card {
     display: flex;
     flex-direction: row;
-    background-color: brown;
+    background: linear-gradient(195deg, #16cfad 0%, #020000 100%);
     margin: 15px;
     margin-inline: 0;
     width: 90%;
     margin-left: 5%;
 }
-.blog-card>img{
+
+.blog-card>img {
     width: 300px;
 }
 
-.card-info>a{
+.card-info>a {
     font-weight: 400;
 }
 
-.card-info{
+.card-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-left: 10px;
-    width:100%;
+    width: 100%;
+}
+
+.add-blog-container {
+    width: 90%;
+    margin-left: 5%;
+    background: linear-gradient(195deg, #16cfad 0%, #020000 100%);
+}
+
+.add-blog-container>button {
+    padding: 15px;
+    padding-inline: 5px;
+    border: none;
+    background-color: unset;
+    font-size: 15px;
+    font-weight: 600;
+    color: #16cfad;
+}
+
+.add-blog-container>button:hover {
+    background-color: #16cfad;
+    color: black;
+    transition: background-color 1s ease;
 }
 
 
 
-.card-title, .card-category{
+
+.card-title,
+.card-category {
     padding: 10px;
     padding-inline: 0;
 }
 
-.cacki>p{
+.cacki>p {
     font-size: 12px;
-    color: grey;
+    color: black;
 }
 
-.cacki{
+.cacki {
     text-align: right;
     padding-right: 5px;
 }
 
 
-@media(max-width:690px){
-    .blog-card{
+/* ////////////////работа с myForm */
+#myForm {
+    display: none;
+    background: linear-gradient(65deg, #16cfad 0%, #020000 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    width: 600px;
+    height: 300px;
+}
+
+#myForm>div>input,
+textarea,
+select {
+    width: 100%;
+    margin: 5px;
+    margin-inline: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 30px;
+}
+
+#myForm>div>textarea {
+    height: 90px;
+}
+
+.leave-btn{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leave-btn>p{
+    margin-bottom: 6px;
+    color: #16cfad;
+}
+
+#myForm>button {
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 550;
+    padding: 15px;
+    padding-inline: 25px;
+    background-color: unset;
+    border: none;
+    color: #000000;
+}
+
+#myForm>button:hover {
+    background-color: #000000;
+    color: #16cfad;
+    transition: background-color 1s ease;
+}
+
+@media(max-width:880px) {
+    #myForm {
+        padding: 0.7rem;
+        width: 500px;
+        height: 300px;
+    }
+
+    #myForm>div>input,
+    textarea,
+    select {
+        width: 100%;
+        margin: 5px;
+        margin-inline: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        height: 25px;
+    }
+}
+
+@media(max-width:730px) {
+    #myForm {
+        padding: 0.5rem;
+        width: 400px;
+        height: 300px;
+    }
+
+    #myForm>div>input,
+    textarea,
+    select {
+        width: 100%;
+        margin: 5px;
+        margin-inline: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        height: 25px;
+    }
+}
+
+@media(max-width:570px) {
+    #myForm {
+        padding: 0;
+        width: 300px;
+        height: 300px;
+    }
+
+    #myForm>div>input,
+    textarea,
+    select {
+        width: 100%;
+        margin: 5px;
+        margin-inline: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        height: 25px;
+    }
+}
+
+@media(max-width:690px) {
+    .blog-card {
         display: flex;
         flex-direction: column;
     }
 
-    .blog-card>img{
+    .blog-card>img {
         width: 100%;
     }
-    
-    .card-info{
+
+    .card-info {
         padding: 0;
     }
 
-    .blog-icon{
+    .blog-icon {
         display: none;
     }
 
 }
 
-@media(max-width:400px){
-    .blog-main-container{
+@media(max-width:400px) {
+    .blog-main-container {
         margin-inline: 0;
         width: 100%;
     }
