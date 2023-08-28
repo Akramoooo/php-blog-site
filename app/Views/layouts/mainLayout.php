@@ -7,6 +7,7 @@
   <title><?=$this->e($title) ?></title>
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/home/home.css">
+  <link rel="stylesheet" href="/css/blog/blog.css">
 
 </head>
 

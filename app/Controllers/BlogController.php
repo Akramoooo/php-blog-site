@@ -17,8 +17,8 @@ class BlogController{
     }
 
     public function index(){
+        $categories = $this->database->getAll('categories');
         $posts = $this->database->getAll('posts');
-        echo $this->view->render('Blog/index', ['posts' => $posts]);
-
+        echo $this->view->render('Blog/index', ['posts' => $posts, 'categories' => $categories]);
     }
 }
