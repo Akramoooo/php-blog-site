@@ -1,0 +1,67 @@
+.blog-main-container{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.blog-main-container>h1{
+    text-align: center;
+}
+
+.blog-card{
+    display: flex;
+    flex-direction: row;
+    background-color: brown;
+    margin: 15px;
+    margin-inline: 0;
+    width: 90%;
+    margin-left: 5%;
+}
+.blog-card>img{
+    width: 300px;
+}
+
+.card-info>a{
+    font-weight: 400;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    width:100%;
+}
+
+
+
+.card-title, .card-category{
+    padding: 10px;
+    padding-inline: 0;
+}
+
+.cacki>p{
+    font-size: 12px;
+    color: grey;
+}
+
+.cacki{
+    text-align: right;
+    padding-right: 5px;
+}
+
+
+@media(max-width:690px){
+    .blog-card{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-card>img{
+        width: 100%;
+    }
+    
+    .card-info{
+        padding: 0;
+    }
+
+}

@@ -5,7 +5,26 @@
     <!-- Ваш HTML-код для отображения блога -->
 </div>
 
-<h1>akramooo blogs</h1>
+<div class="blog-main-container">
+    <h1>Blogs</h1>
+
+    <?php for($i=0;$i<count($posts);$i++) : ?>
+        <div class="blog-card">
+            <img src="<?=$posts[$i]['image']?>" alt="изображение">
+            <div class="card-info">
+                <p class="card-title"><?=$posts[$i]['title']?></p>
+                <a href="#">
+                    <p class="card-desc"><?=$posts[$i]['description']?></p>
+                </a>
+                <div class="cacki">
+                    <p class="card-category"><?=$categories[$posts[$i]['category_id']]['title']; ?></p>
+                </div>
+
+            </div>
+        </div>
+    <?php endfor ?>
+</div>
+
 
 
 
@@ -13,7 +32,7 @@
 
 
 <?php $this->start('includes') ?>
-<script>
+<script src="/js/blog/blog.js">
 </script>
 
 <?php $this->stop() ?>
