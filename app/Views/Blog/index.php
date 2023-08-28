@@ -6,7 +6,7 @@
 </div>
 
 <div class="blog-main-container">
-    <h1>Blogs</h1>
+    <h1 class="blog-icon">Blogs</h1>
 
     <?php for($i=0;$i<count($posts);$i++) : ?>
         <div class="blog-card">

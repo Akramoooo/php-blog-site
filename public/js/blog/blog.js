@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    ///////////работа с описанием//////////////////
     $('.card-desc').each(function(){
       var maxLength = 30;
       var text = $(this).text();
@@ -8,7 +9,7 @@ $(document).ready(function(){
       }
       $(this).text(trimmedText);
     });
-
+    ////////////////работа с постами///////////////
     $('.blog-card').mouseover(function(){
         $(this).stop().animate({'width':'100%', 'margin-left':'0'});
     });
@@ -16,4 +17,19 @@ $(document).ready(function(){
     $('.blog-card').mouseout(function(){
         $(this).stop().animate({'width':'90%', 'margin-left':'5%'});
     });
+
+    //////////////работа с блог текстом////////////
+
+    $('.blog-icon').mouseover(function(){
+        $(this).append('<span>Akramoooo</span>');
+        $('span').css({'color':'red', 'font-size':'10px'});
+
+    });
+
+    $('.blog-icon').mouseout(function(){
+        $(this).text('Blogs');
+        $(this).remove('<span>Akramoooo</span>')
+    });
+
+    ///////////////////////////////////
   });
