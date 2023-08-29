@@ -5,6 +5,7 @@ require "../vendor/autoload.php";
 use League\Plates\Engine;
 use DI\ContainerBuilder;
 use FastRoute\RouteCollector;
+use Aura\SqlQuery\QueryFactory;
 
 
 $ContainerBuilder = new ContainerBuilder;
@@ -12,6 +13,9 @@ $ContainerBuilder->addDefinitions([
     Engine::class => function () {
         return new Engine("../app/Views");
     },
+    QueryFactory::class => function(){
+        return new QueryFactory('mysql');
+    }
 ]);
 
 $container = $ContainerBuilder->build();
@@ -20,6 +24,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', '/home', ['App\Controllers\HomeController', 'index']);
     $r->addGroup('/blog', function (RouteCollector $r) {
         $r->addRoute('GET', '/index', ['App\Controllers\BlogController', 'index']);
+        $r->addRoute('POST', '/store', ['App\Controllers\BlogController', 'store']);
     });
     // {id} must be a number (\d+)
     // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');

@@ -20,7 +20,8 @@
 }
 
 .blog-card>img {
-    width: 300px;
+    width: 350px;
+    height: 350px;
 }
 
 .card-info>a {
@@ -114,6 +115,7 @@ select {
 .leave-btn>p{
     margin-bottom: 6px;
     color: #16cfad;
+    cursor: pointer;
 }
 
 #myForm>button {
@@ -195,6 +197,7 @@ select {
     .blog-card {
         display: flex;
         flex-direction: column;
+        background: linear-gradient(120deg, #16cfad 0%, #020000 100%);
     }
 
     .blog-card>img {
@@ -207,6 +210,11 @@ select {
 
     .blog-icon {
         display: none;
+    }
+
+    .cacki>p {
+        font-size: 12px;
+        color: rgb(250, 246, 246);
     }
 
 }
