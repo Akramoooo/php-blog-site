@@ -41,6 +41,6 @@ class BlogController
         ];
         var_dump($data);
         $this->database->create('posts', $data);
-        return $data['title'];
+        return $this->database->getAll('posts');
     }
 }

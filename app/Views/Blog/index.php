@@ -8,7 +8,17 @@
 <div class="blog-main-container">
     <h1 class="blog-icon">Blogs</h1>
     <div class="add-blog-container">
-        <button>Добавить</button>
+        <div class="blog-btns">
+            <button class="add-btn">Добавить</button>
+            <button class="filter-btn"><span>&#9658;</span>Фильтр</button>
+        </div>
+        <form id="myFilter" method="GET">
+            <?php foreach($categories as $category):?>
+            <div>
+                <input type="checkbox" name="category_id" id=""> <span><?= $category['title']?></span>
+            </div>
+            <?php endforeach;?>
+        </form>
         <form id="myForm" method="POST" enctype="multipart/form-data">
             <div class="leave-btn">
                 <h3>Add Blog</h3>
@@ -45,7 +55,6 @@
                 <div class="cacki">
                     <p class="card-category"><?= $categories[$posts[$i]['category_id']]['title']; ?></p>
                 </div>
-
             </div>
         </div>
     <?php endfor ?>
