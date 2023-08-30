@@ -26,6 +26,10 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/index', ['App\Controllers\BlogController', 'index']);
         $r->addRoute('POST', '/store', ['App\Controllers\BlogController', 'store']);
     });
+    $r->addGroup('/auth', function (RouteCollector $r) {
+        $r->addRoute('GET', '/regForm', ['App\Controllers\Auth\RegController', 'regForm']);
+        $r->addRoute('GET', '/logForm', ['App\Controllers\Auth\LogController', 'logForm']);
+    });
     // {id} must be a number (\d+)
     // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
     // // The /{title} suffix is optional

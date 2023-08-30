@@ -1,0 +1,48 @@
+.reg-container {
+    width: 80%;
+    margin-left: 10%;
+    display: inline-block;
+    text-align: center;
+}
+
+.reg-container>form {
+    display: inline-block;
+    padding: 20px;
+    margin-top: 2rem;
+    text-align: start;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(255, 251, 251, 0.267);
+    backdrop-filter: blur(15px);
+}
+
+.reg-container>form>div {
+    margin: 10px;
+    margin-inline: 0;
+}
+
+.reg-container>form>div>input {
+    font-size: 25px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding-left: 2px;
+    height: 50px;
+    background-color: unset;
+}
+
+.reg-btn{
+    background-color: unset;
+    border: unset;
+    padding: 10px;
+    padding-inline: 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.reg-btn:hover{
+    background-color:#000000;
+    color:#16cfad;
+    transition: background-color 1s ease;
+}
