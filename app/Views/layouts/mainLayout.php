@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/home/home.css">
   <link rel="stylesheet" href="/css/blog/blog.css">
+  <link rel="stylesheet" href="/css/auth/regForm.css">
 
 </head>
 
@@ -20,8 +21,8 @@
           <ul>
             <li><a href="<?='/home'?>">Home</a></li>
             <li><a href="<?='/blog/index'?>">Blogs</a></li>
-            <li><a href="#">Sign in</a></li>
-            <li><a href="#">Log in</a></li>
+            <li><a href="<?='/auth/regForm'?>">Sign in</a></li>
+            <li><a href="<?='/auth/logForm'?>">Log in</a></li>
           </ul>
         </div>
       </div>
@@ -33,8 +34,8 @@
       </div>
       <div class="right-panel">
         <ul>
-          <li><a href="#">Sign in</a></li>
-          <li><a href="#">Log in</a></li>
+          <li><a href="<?='/auth/regForm'?>">Sign in</a></li>
+          <li><a href="<?='/auth/logForm'?>">Log in</a></li>
         </ul>
       </div>
     </div>
