@@ -20,20 +20,9 @@ $(document).ready(function () {
 
     //////////////работа с блог текстом////////////
 
-    $('.blog-icon').mouseover(function () {
-        $(this).append('<span>Akramoooo</span>');
-        $('span').css({ 'color': 'red', 'font-size': '10px' });
-
-    });
-
-    $('.blog-icon').mouseout(function () {
-        $(this).text('Blogs');
-        $(this).remove('<span>Akramoooo</span>')
-    });
-
     ///////////////////////работа с кнопкой Добавления Блога///
 
-    $('.add-blog-container>button').on('click', function () {
+    $('.add-blog-container>.blog-btns>.add-btn').on('click', function () {
         $('#myForm').fadeIn(400).css({ 'display': 'block' })
     });
 
@@ -57,6 +46,8 @@ $(document).ready(function () {
             success: function (response) {
                 // Обработка успешного завершения запроса
                 console.log('Запрос выполнен успешно:', response);
+                $('.blog-card').empty();
+
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 // Обработка ошибки AJAX
@@ -66,5 +57,18 @@ $(document).ready(function () {
     })
 
 
-    ///////////////////////////////
+    ///////////////////////////////работа с Фильтром
+
+    $('.filter-btn').on('click', function () {
+        var filter = $('#myFilter');
+        var btn = $('.filter-btn>span');
+
+        if (filter.css('display') === 'none') {
+            filter.css('display', 'block');
+            btn.html('&#9660;');
+        } else {
+            filter.css('display', 'none');
+            btn.html('&#9658');
+        }
+    });
 });
