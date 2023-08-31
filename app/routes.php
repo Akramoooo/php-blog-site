@@ -28,6 +28,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     });
     $r->addGroup('/auth', function (RouteCollector $r) {
         $r->addRoute('GET', '/regForm', ['App\Controllers\Auth\RegController', 'regForm']);
+        $r->addRoute('POST', '/register', ['App\Controllers\Auth\RegController', 'register']);
         $r->addRoute('GET', '/logForm', ['App\Controllers\Auth\LogController', 'logForm']);
     });
     // {id} must be a number (\d+)

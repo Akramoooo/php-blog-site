@@ -18,4 +18,14 @@ class RegController {
     public function regForm(){
         echo $this->view->render('Auth/regForm');
     }
+
+    public function register(){
+        $data = [
+            'name' => $_POST['name'],
+            'email' => $_POST['email'],
+            'password' => $_POST['password'],
+            'confirm' => $_POST['confirm'],
+        ];
+        $this->regService->makeUser($data);
+    }
 }
