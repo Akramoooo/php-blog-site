@@ -46,3 +46,13 @@
     color:#16cfad;
     transition: background-color 1s ease;
 }
+
+.error{
+    color: red;
+    font-size: 15px;
+
+}
+
+.error-container{
+    text-align: center;
+}

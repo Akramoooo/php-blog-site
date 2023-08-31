@@ -25,7 +25,7 @@
 
 <?php $this->start('includes') ?>
 
-<script>
+<script src="/js/auth/logForm.js">
 
 </script>
 
