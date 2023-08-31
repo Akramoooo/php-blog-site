@@ -1,8 +1,15 @@
 <?php $this->layout('layouts/mainLayout', ['title' => 'Log in']) ?>
 
+<?php if (isset($_SESSION['error'])) : ?>
+
+    <div class="error-container">
+        <p class="error"><?= $_SESSION['error']; ?></p>
+    </div>
+    <?php unset($_SESSION['error']); ?>
+<?php endif ?>
 
 <div class="reg-container">
-    <form action="" method="POST">
+    <form action="<?= '/auth/loginer' ?>" method="POST">
         <h3>Authorization</h3>
 
         <div>
