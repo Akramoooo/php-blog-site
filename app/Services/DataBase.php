@@ -36,6 +36,16 @@ class DataBase
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getForEmail($table, $email)
+    {
+        $sql = "SELECT * FROM $table WHERE email = :email";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function create($table, $data)
     {
         $insert = $this->queryfactory->newInsert();
