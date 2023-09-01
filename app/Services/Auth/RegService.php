@@ -19,12 +19,12 @@ class RegService
             // Проверка данных. Здесь вызывается AuthException, если данные не корректны.
             $this->validateUserData($data);
             unset($data['confirm']);
-            $data['password'] = md5($data['password']);
+            $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
             $this->dataBase->create('users', $data);
             return header('location:/home');
         } catch (AuthException $e) {
             // Обработайте исключение, например, запишите ошибку или верните сообщение об ошибке.
-            echo $e->getMessage();
+            $_SESSION['error'] = $e->getMessage();
         }
     }
 

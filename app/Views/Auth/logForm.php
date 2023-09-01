@@ -1,12 +1,5 @@
 <?php $this->layout('layouts/mainLayout', ['title' => 'Log in']) ?>
 
-<?php if (isset($_SESSION['error'])) : ?>
-
-    <div class="error-container">
-        <p class="error"><?= $_SESSION['error']; ?></p>
-    </div>
-    <?php unset($_SESSION['error']); ?>
-<?php endif ?>
 
 <div class="reg-container">
     <form action="<?= '/auth/loginer' ?>" method="POST">
@@ -14,15 +7,15 @@
 
         <div>
             <label for="email">Email</label>
-            <input type="email" name="email">
+            <input type="email" class="email" name="email">
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" name="password">
+            <input type="password" class="password" name="password">
         </div>
 
         <div>
-            <button type="submit" class="reg-btn">Log in</button>
+            <button type="button" class="reg-btn">Log in</button>
         </div>
     </form>
 </div>

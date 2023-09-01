@@ -31,6 +31,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('POST', '/register', ['App\Controllers\Auth\RegController', 'register']);
         $r->addRoute('GET', '/logForm', ['App\Controllers\Auth\LogController', 'logForm']);
         $r->addRoute('POST', '/loginer', ['App\Controllers\Auth\LogController', 'loginer']);
+        $r->addRoute('POST', '/check-is-have', ['App\Controllers\Auth\LogController', 'checkIsHave']);
         $r->addRoute('GET', '/logout', ['App\Controllers\Auth\LogController', 'logOut']);
     });
     // {id} must be a number (\d+)

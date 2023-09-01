@@ -27,7 +27,7 @@
             <input type="password" class="confirm" name="confirm">
         </div>
         <div>
-            <button type="submit" class="reg-btn">Sign in</button>
+            <button type="button" class="reg-btn">Sign in</button>
         </div>
     </form>
 </div>

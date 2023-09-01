@@ -13,14 +13,16 @@ class LogException extends Exception
     public function __construct(DataBase $db, $data)
     {
         $this->db = $db;
-
+        $user = $this->db->getForEmail('users', $data['email']);
 
         if ($data['email'] == null) {
-            $_SESSION['error'] = "Пожалуйста, введите почту";
+            throw new Exception("email не должен быть пустым");
         } elseif ($data['password'] == null) {
-            $_SESSION['error'] = "Поле пароль не должно быть пустым";
-        } elseif ($this->db->getForEmail('users', $data['email']) == null){
-            $_SESSION['error'] = "Нету такого пользователя";
+            throw new Exception("password не должен быть пустым");
+        } elseif ($data['email'] != $user['email'] || !password_verify($data['password'], $user['password'])){
+            throw new Exception("Нету такого пользователя");
         }
+        header("Location: /home");
+        exit;
     }
 }
