@@ -1,9 +1,5 @@
 <?php $this->layout('layouts/mainLayout', ['title' => 'Главная']) ?>
 
-
-<?php var_dump($_SESSION)?>
-
-
 <div class="main-home-container">
     <div class="home-info-container">
         <h1 style="margin-bottom: 10px;">О проекте</h1>

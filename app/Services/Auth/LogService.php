@@ -27,9 +27,11 @@ class LogService
             return header('location:/home');
         } catch (LogException $e) {
             // Обработайте исключение, например, запишите ошибку или верните сообщение об ошибке.
-            echo $e->getMessage();
+            $_SESSION['error'] =  $e->getMessage();
         }
     }
+
+    
 
     private function validateUserData($data)
     {
