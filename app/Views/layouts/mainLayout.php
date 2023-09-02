@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/home/home.css">
   <link rel="stylesheet" href="/css/blog/blog.css">
+  <link rel="stylesheet" href="/css/blog/comments.css">
   <link rel="stylesheet" href="/css/auth/regForm.css">
 
 </head>

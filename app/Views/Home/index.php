@@ -1,6 +1,8 @@
 <?php $this->layout('layouts/mainLayout', ['title' => 'Главная']) ?>
-
 <div class="main-home-container">
+    <div>
+        <p><?php var_dump($_SESSION)?></p>
+    </div>
     <div class="home-info-container">
         <h1 style="margin-bottom: 10px;">О проекте</h1>
         <span>Проект разрабатывается не опытным разработчиком, который улучшает свои навыки
@@ -14,7 +16,7 @@
             <img src="site_images/github.jpg" alt="github">
             <p><span>Akramoooo</span></p>
             <p><span>19лет</span></p>
-            <p><span>Разрабатываю сайты и развиватюсь в своем направлении</span></p>
+            <p><span>Разрабатываю сайты и развиваюсь в своем направлении</span></p>
             <p><a href="https://github.com/Akramoooo?tab=repositories" target="_blank" style="color: blue;">Ссылка</a></p>
         </div>
         <div class="my-telegram">
