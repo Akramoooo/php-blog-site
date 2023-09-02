@@ -13,11 +13,11 @@
             <button class="filter-btn"><span>&#9658;</span>Фильтр</button>
         </div>
         <form id="myFilter" method="GET">
-            <?php foreach($categories as $category):?>
-            <div>
-                <input type="checkbox" name="category_id" id=""> <span><?= $category['title']?></span>
-            </div>
-            <?php endforeach;?>
+            <?php foreach ($categories as $category) : ?>
+                <div>
+                    <input type="checkbox" name="category_id" id=""> <span><?= $category['title'] ?></span>
+                </div>
+            <?php endforeach; ?>
         </form>
         <form id="myForm" method="POST" enctype="multipart/form-data">
             <div class="leave-btn">
@@ -25,7 +25,7 @@
                 <p>выход</p>
             </div>
             <div>
-                <input type="text" id="title"  name="title" placeholder="title">
+                <input type="text" id="title" name="title" placeholder="title">
             </div>
             <div>
                 <textarea name="description" id="" cols="22" rows="5" placeholder="description"></textarea>
@@ -36,7 +36,7 @@
             <div>
                 <select id="category" name="category_id">
                     <?php foreach ($categories as $category) : ?>
-                        <option  value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
+                        <option value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
                     <?php endforeach ?>
                 </select><br>
             </div>
@@ -46,12 +46,13 @@
     </div>
     <?php for ($i = 0; $i < count($posts); $i++) : ?>
         <div class="blog-card">
+
             <img src="<?= '/' . $posts[$i]['image'] ?>" alt="изображение">
             <div class="card-info">
                 <p class="card-title"><?= $posts[$i]['title'] ?></p>
-                <a href="#">
-                    <p class="card-desc"><?= $posts[$i]['description'] ?></p>
-                </a>
+                <p class="card-desc"><?= $posts[$i]['description'] ?></p>
+                <a href="/blog/show/<?= $posts[$i]['id']; ?>"><p>comments</p></a>
+
                 <div class="cacki">
                     <p class="card-category"><?= $categories[$posts[$i]['category_id']]['title']; ?></p>
                 </div>

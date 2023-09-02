@@ -25,6 +25,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addGroup('/blog', function (RouteCollector $r) {
         $r->addRoute('GET', '/index', ['App\Controllers\BlogController', 'index']);
         $r->addRoute('POST', '/store', ['App\Controllers\BlogController', 'store']);
+        $r->addRoute('GET', '/show/{id:\d+}', ['App\Controllers\BlogController', 'show']);
+        $r->addRoute('POST', '/add-comment', ['App\Controllers\BlogController', 'addComment']);
     });
     $r->addGroup('/auth', function (RouteCollector $r) {
         $r->addRoute('GET', '/regForm', ['App\Controllers\Auth\RegController', 'regForm']);

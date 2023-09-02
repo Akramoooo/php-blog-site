@@ -70,4 +70,27 @@ class DataBase
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
     }
+
+    public function getLastInsertId($table)
+    {
+        return $this->pdo->lastInsertId($table);
+    }
+
+    public function getOnePostComment($post_id, $comment_id)
+    {
+        $select = $this->queryfactory->newSelect();
+        $select->cols(["*"])
+            ->from('post_comments')
+            ->where('comment_id = :comment_id')
+            ->where('post_id = :post_id')
+            ->bindValues([                  // bind these values to named placeholders
+                ':comment_id' => $comment_id,
+                ':post_id' => $post_id,
+            ]);
+
+        $sth = $this->pdo->prepare($select->getStatement());
+        $sth->execute($select->getBindValues());
+        $result = $sth->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

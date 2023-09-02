@@ -46,7 +46,8 @@ $(document).ready(function () {
             success: function (response) {
                 // Обработка успешного завершения запроса
                 console.log('Запрос выполнен успешно:', response);
-                $('.blog-card').empty();
+                var parsedResponse = JSON.parse(response);
+                $('.blog-main-container').after('<div class="blog-card">< img src = " '+ parsedResponse.image + '" alt = "изображение"><div class="card-info"><p class="card-title"> ' + parsedResponse.title + '</p><a href="#"><p class="card-desc"> ' + parsedResponse.description + '</p></a><div class="cacki"><p class="card-category"> ' + parsedResponse.category_id + '</p></div></div></div > ');
 
             },
             error: function (jqXHR, textStatus, errorThrown) {

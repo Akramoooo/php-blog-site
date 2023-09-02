@@ -39,8 +39,23 @@ class BlogController
             'image' => $imagePath,
             'category_id' => $_POST['category_id']
         ];
-        var_dump($data);
         $this->database->create('posts', $data);
-        return $this->database->getAll('posts');
+        return json_encode($data, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function show($id)
+    {
+        $categories = $this->database->getAll('categories');
+        $post = $this->database->getOne('posts', $id);
+        echo $this->view->render('Blog/show', ['post' => $post, 'categories' => $categories]);
+    }
+
+    public function addComment()
+    {
+        $this->database->create('comments', ['title' => $_POST['comment']]);
+        $id = $this->database->getLastInsertId('comments');
+        $postId = $_POST['id'];
+        $this->database->create('post_comments', ['post_id' => $postId, 'comment_id' => $id]);
+        $result = $this->database->getOnePostComment($postId, $id);
     }
 }
